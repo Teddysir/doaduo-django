@@ -1,0 +1,193 @@
+/* 기존 스타일 유지 */
+body {
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+    background-color: white; /* 밝은 회색 배경 (Soup 스타일) */
+    color: black(0 20% 80%); /* 기본 글씨 색 */
+}
+
+/* 전체 컨테이너 */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #282c30; /* 배경과 통일 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    position: fixed; /* 고정 위치 */
+    top: 50px; /* 상단바 높이만큼 내림 */
+    left: 0;
+    width: 270px; /* 사이드바 너비 */
+    background-color: rgb(107, 150, 255);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: calc(100vh - 50px); /* 상단바를 제외한 나머지 공간 */
+    z-index: 1000; /* 다른 요소 위로 오게 설정 */
+    border-right: 2px solid rgb(107, 150, 255); /* 오른쪽에 2px 회색 경계선 추가 */
+    border-radius: 1%;
+
+}
+
+.sidebar .logo {
+    max-width: 135px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar .menu ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.sidebar .menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Baloo 2', cursive; /* 폰트 적용 */
+    font-weight: 700; /* 굵기 조정 (필요시) */
+    transition: color 0.3s ease; /* 호버 효과 추가 */
+}
+
+.sidebar .menu ul li a:hover {
+    color: #ffcc00; /* 호버 시 글씨 색 변경 */
+}
+
+/* 상단 바 스타일 */
+.top-bar {
+    position: fixed; /* 상단 고정 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 화면 전체 너비 */
+    height: 50px;
+    background-color: rgb(107, 150, 255);
+    z-index: 1001; /* 사이드바보다 위에 있도록 설정 */
+    border-bottom: 2px solid rgb(153, 190, 255); /* 아래쪽 경계선 추가 */
+    
+}
+
+/* 배너 슬라이더 */
+/* 배너 슬라이드 컨테이너 */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 슬라이드 밖 내용 숨기기 */
+    margin-top: 50px; /* 상단바 아래 배치 */
+}
+
+/* 슬라이드 전체 */
+.slides {
+    display: flex; /* 슬라이드를 가로로 나열 */
+    transition: transform 0.5s ease-in-out; /* 부드러운 이동 효과 */
+    width: 400%; /* 슬라이드 개수에 비례 */
+}
+
+/* 개별 슬라이드 */
+.slide {
+    flex: 1 0 100%; /* 각 슬라이드의 크기 설정 */
+}
+
+.slide img {
+    width: 100%; /* 슬라이드가 화면에 맞게 */
+    height: 250px; /* 슬라이드 높이 설정 */
+    object-fit: cover; /* 이미지 비율 유지 */
+}
+
+/* 배너 아래 정보 섹션 */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 왼쪽 정렬 */
+    margin: 20px auto 0 auto;
+    width: calc(100% - 270px); /* 사이드바 제외한 너비 */
+    margin-left: 270px; /* 사이드바 옆으로 배치 */
+    padding: 20px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center; /* 로고와 텍스트를 세로 중앙 정렬 */
+    gap: 20px; /* 로고와 텍스트 사이의 간격 */
+    background-color: white; /* 연한 회색 배경 */
+    border: 2px solid #ddd; /* 2px 회색 테두리 */
+    border-radius: 10px; /* 살짝 둥근 모서리 */
+    padding: 15px; /* 내부 여백 */
+    width: 100%; /* 부모의 전체 너비를 차지 */
+}
+/* 로고 이미지 스타일 */
+.about-logo {
+    width: 220px; /* 로고 크기 줄이기 */
+    height: 80px;
+}
+
+/* 텍스트 스타일 */
+.about-text {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #003366; /* 제목 색상 */
+    font-weight: bold;
+}
+
+.about-text p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+
+
+
+/* 특징 섹션 스타일 */
+.features-section {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-start; /* 세로에서 위쪽 정렬 */
+    gap: 30px; /* 이미지 간격 */
+    margin: 40px auto; /* 위아래 간격 및 중앙 배치 */
+    width: calc(100% - 270px); /* 사이드바 제외한 너비 */
+    margin-left: 270px; /* 사이드바 제외 */
+    padding: 20px;
+    background-color: white; /* 연한 배경 */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 이미지와 텍스트를 중앙 정렬 */
+    text-align: center;
+    width: 350px; /* 개별 특징의 너비 */
+}
+
+.feature-image {
+    width: 120px; /* 이미지 크기 */
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px; /* 이미지와 텍스트 간격 */
+}
+
+.feature-description {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
